@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../assets/all.min.css';
 import logo from '../assets/logo.png';
 import '../assets/nav.css';
+import '../assets/modal.css';
 
 const focusStyle ={
     backgroundColor : '#fff',
@@ -36,6 +37,7 @@ export class Nav extends Component {
     }
     render() {
         return (
+            <>
             <div className='nav'>
                 <div className='nav-container'>
                     <div className='brand'>
@@ -52,7 +54,7 @@ export class Nav extends Component {
                     </form>
                     <div className='widgets'>
                         <i className='fas fa-cloud-upload-alt'  aria-hidden="true"></i>
-                        <i className='fas fa-grip-horizontal'></i>
+                        <i className='fas fa-grip-horizontal' onClick={this.props.orientationHandle}></i>
                         <i className='fas fa-cog'></i>
                     </div>
                     <div className='mail-box'>
@@ -60,6 +62,8 @@ export class Nav extends Component {
                     </div>
                 </div>
             </div>
+            <div className='modal-bgc' onClick={this.props.handleModalOpen} style={this.props.isModalOpened ? {animationName : 'modalOpen'} : {animationName : 'modalClose'}}></div>
+            </>
         )
     }
 }

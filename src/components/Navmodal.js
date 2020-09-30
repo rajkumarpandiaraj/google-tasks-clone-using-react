@@ -4,34 +4,36 @@ import '../assets/all.min.css';
 import '../assets/modal.css';
 
 function Navmodal(props) {
-    const {handleModalOpen, isModalOpened} = props
+    const { isModalOpened} = props
     return (
-        <div className='modal' onClick={handleModalOpen} style={isModalOpened ? {animationName : 'modalOpen'} : {animationName : 'modalClose'} }>
-            <div className='modal-container'>
+        <div className='modal' >
+            <div className='modal-container' style={isModalOpened ? {animationName : 'modalOpen'} : {animationName : 'modalClose'} }>
                 <div className='logo-brand'>
                     <img src={logo} alt='logo'/>
                     <p className='modal-brand-name'>GoogleTasks</p>
                 </div>
                 <hr className='line-break'/>
-                <div className='board'>
-                    <div className='main-board'>
+                <ul className='board '>
+                    <li className='main-board board-item'>
                         <i className='far fa-clipboard icon'></i>
                         <span>Main board</span>
-                    </div>
+                    </li>
                     
-                    <div className='add-board'>
+                    <li className='add-board board-item'>
                         <div className='plus'>
                         <i className='fas fa-plus icon'></i>
                         </div>
                         <span>Add board</span>
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 <hr className='line-break'/>
                 <div className='premium'>
-                    <div className='star'>
-                        <i className='fas fa-star icon'></i>
+                    <div className='premium-text'>
+                        <div className='star'>
+                            <i className='fas fa-star icon'></i>
+                        </div>
+                        <p>Try Premium for free</p>
                     </div>
-                    <p>Try Premium for free</p>
                 </div>
                 <hr className='line-break-last'/>
                 <div className='task-board'>
